@@ -5,6 +5,9 @@ This guide describes how to use the [GWAS SumStats Tools Online Interface](https
 >[!ATTENTION|style:callout]
 >This interface requires a **chromium browser** (Google Chrome, Microsoft Edge) that supports the [File System Access API](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access).
 
+>[!ATTENTION|style:callout]
+>Please note that this interface works with **a single file only** and has a file size limitation of **2 GB**. 
+
 ## Overview
 
 Users can select a file from their local folder for formatting (Steps 1 to 4) or validation (Step 5) using this interface.
@@ -194,7 +197,7 @@ On the UI, configurations are displayed in a text box that allows users to easil
 ```
 </details>
 
-The JSON config file comprises two primary sections: `fileConfig` and `columnConfig`. The columnConfig section further encompasses two subsections: `split` and `edit`.
+The JSON config file comprises two primary sections: `fileConfig` and `columnConfig`. The columnConfig section further encompasses two subsections: `split` and `edit`. The `fileConfig` settings are applied to the input file first, followed by modifications from the `split` and the `edit` subsections, which represent the final changes to the input files.
 
 #### `fileConfig` Section:
   - `outFileSuffix`: Specifies the suffix for the output file. It is currently set to null.
@@ -347,6 +350,16 @@ This subsection specifies editing operations to be performed on certain columns.
         
         </details>
 
+## Additional Functions
+Beyond formatting the input file according to the configuration file, the format tool also applies several default settings to every summary statistic:
+
+1. Reorder the mandatory columns in your dataset to match the GWAS-SSF specified sequence: 
+```text
+chromosome, base_pair_location, effect_allele, other_allele, effect (beta/odds ratio/hazard ratio), standard_error, effect_allele_frequency, pval (or negativelog10Pvalue). 
+```
+Arrange any additional columns in their original input order.
+2. Filling Missing Fields: If any mandatory column is missing from the input file, the format tool will automatically add this column and populate all its values with `#NA`.
+3. Convert NA Values: The tool converts any 'NA' or 'None' values with `#NA`, ensuring data consistency.
 
 ----
 Copyright © EMBL-EBI 2024 | EMBL-EBI is an Outstation of the [European Molecular Biology Laboratory](https://www.embl.org/) | [Terms of use](https://www.ebi.ac.uk/about/terms-of-use) | [Data Preservation Statement](https://www.ebi.ac.uk/long-term-data-preservation)
