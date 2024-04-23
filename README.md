@@ -1,31 +1,45 @@
-# Docsify Template
+# GWAS SumStats Tools
+___
 
-> A simple [Docsify](https://github.com/docsifyjs/docsify/) template for creating Markdown-based documentation sites, with no build process required.
+GWAS SumStats Tools is a versatile toolkit created to simplify the processing, validation, and formatting of GWAS summary statistics files intended for submission to the GWAS catalog. This toolkit provides a variety of features designed for efficiency and ease of use.
 
-## Site Setup
+## Features
+1. Reading: Preview a GWAS summary statistics data file, extract headers, metadata, or specific field-value pairs from the metadata.
+2. Formatting: Convert tubular sumstats files to GWAS catalog standard format (gwas-ssf), with options for spliting fields, renaming fields, reordering, convert -log (P-value) to normal P-values, handling missing values efficiently and removing comments.
+3. Metadata Generation: Automatically generate metadata for a data file from a submission form or create metadata from the GWAS Catalog (for internal use).
+4. Validation: Validate the integrity of a summary statistic file using a dynamically generated schema.
 
-### Static Webserver
-Upload these template files to any static web server. The file `.nojekyll` is only required if hosting the site on GitHub Pages and otherwise can be removed.
+## Quick Start
 
-### GitHub Pages
+### User-friendly interface
+If you prefer a user-friendly interface for formatting or validating your data, you can use our online tool. This interface allows you to quickly format or validate individual files with a size limit of 2 GB, all without the need for command-line usage. Simply click on the link below to access the tool and upload your data directly from your local computer:
 
-#### Hosting Site
+[GWAS SumStats Tools Online Interface - format and validation](https://ebispot.github.io/gwas-sumstat-format-was/)
 
-To host this template on GitHub Pages do the following:  
+> [!TIP|style:callout]
+> Please note that this interface works with **a single file only** and has a file size limitation of  <span style="font-size:1.2em;">**2 GB** </span>. 
 
-1. Log into GitHub if you have not done so already
-2. Tap the **Use this template** button in the upper-right of this GitHub Repository and choose **Create a new repository**
-3. Enter a name for your new Repository and then tap the **Create repository** button
-4. Once your new Repostitory is created go to **Settings**, then select **Pages** from the left-hand sidebar, and under **Branch** choose **main** and then tap the **Save** button
-5. Wait a minute or two and refresh the same **Pages** page - once your site is ready a message will be displayed at the top of the screen along with a site link and a **Visit site** button
+For instructions on how to use the user-friendly interface, please visit our UI Guide Page (Link to be provided).
 
-#### Editing Content
+### Command Line
+However, if you require full access to all functions, or if you need to process larger files or multiple files simultaneously, we recommend using the command-line interface. Please follow the instructions provided here to install and use the command-line tools.
 
-How about editing the content of your new Docsify site on GitHub Pages? View the Markdown page you want to edit (for example, **README.md**) and tap the **Pencil Icon**, then save any changes by tapping the green **Commit changes...** button. In just a few moments the Docsify site will be automatically updated to reflect those changes.
+Installation requirements:
 
-### Viewing Locally 
-Run `npx serve .` (Node.js users) or `python -m http.server 8000` (Python users) in the repo folder to serve run locally.
+Python >= 3.9 and <3.12
 
-## Docsify Documentation
+If you have a different Python version installed on your local computer and encounter compatibility issues, you can create a virtual environment with Python 3.9 and please follow the instruction [here]()
 
-To learn more about using Docsify, visit https://docsify.js.org.
+#### Local Installation with pip
+```bash
+$ pip3 install gwas-sumstats-tools
+```
+
+#### Run with Docker
+You can also run GWAS SumStats Tools using Docker:
+```bash
+$ docker run -it -v ${PWD}:/application ebispot/gwas-sumstats-tools:latest
+```
+
+----
+Copyright © EMBL-EBI 2024 | EMBL-EBI is an Outstation of the [European Molecular Biology Laboratory](https://www.embl.org/) | [Terms of use](https://www.ebi.ac.uk/about/terms-of-use) | [Data Preservation Statement](https://www.ebi.ac.uk/long-term-data-preservation)
