@@ -56,7 +56,7 @@ $ pip install gwas-sumstats-tools
 ```bash
 $ deactivate
 ```
-> Please refer to [xx](https://packaging.python.org/en/latest/tutorials/installing-packages/) for more detail information on how to install packages 
+> Please refer to [installing-packages](https://packaging.python.org/en/latest/tutorials/installing-packages/) for more detail information on how to install packages 
 
 #### Option 2: Run with docker or singularity
 1. Check if the docker **OR** singularity is available
