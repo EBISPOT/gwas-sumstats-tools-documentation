@@ -5,7 +5,7 @@ GWAS SumStats Tools is a versatile toolkit created to simplify the processing, v
 
 ## Features
 1. Reading: Preview a GWAS summary statistics data file, extract headers, metadata, or specific field-value pairs from the metadata.
-2. Formatting: Convert tabular sumstats files to GWAS Catalog standard format (gwas-ssf), with options for splitting fields, renaming fields, reordering, converting -log (P-value) to normal P-values, handling missing values efficiently and removing comments.
+2. Formatting: Convert tabular summary statistics files to GWAS Catalog standard format (gwas-ssf), with options for splitting fields, renaming fields, reordering, converting -log (P-value) to normal P-values, handling missing values efficiently and removing comments.
 3. Metadata Generation: Automatically generate metadata for a data file from a submission form or create metadata from the GWAS Catalog (for internal use).
 4. Validation: Validate the integrity of a summary statistic file using a dynamically generated schema.
 

@@ -160,7 +160,7 @@ While using the CLI, configurations are managed within the `filename.json` file.
 ```
 </details>
 
-The configurations comprises two primary sections: `fileConfig` and `columnConfig`. The columnConfig section further encompasses two subsections: `split` and `edit`. 
+The configurations comprises two primary sections: `fileConfig` and `columnConfig`. The `columnConfig` section further encompasses two subsections: `split` and `edit`. 
 
 The `fileConfig` settings are applied to the input file first, followed by modifications from the `split` and then the `edit` subsections.
 
@@ -169,7 +169,7 @@ The `fileConfig` settings are applied to the input file first, followed by modif
     ```json
      "outFileSuffix":"_formatted"
      ```
-  - `convertNegLog10Pvalue`: Specifies whether to convert negative log10 p-values into p-values and it is set to false defautly. To enable this conversion, adjust your settings as follows:
+  - `convertNegLog10Pvalue`: Specifies whether to convert negative log10 p-values into p-values and it is set to false by default. To enable this conversion, adjust your settings as follows:
     ```json
      "convertNegLog10Pvalue":true
      ```
@@ -177,11 +177,11 @@ The `fileConfig` settings are applied to the input file first, followed by modif
      ```json
      "fieldSeparator":"\t"
      ```
-  - `removeComments`: The `removeComments` field in the JSON config acts like the `--remove_comments` command-line option. Setting it to a character or string, like "#", removes lines starting with that character or string from the input file. For example, to remove lines that begin with `#`, effectively eliminating comments or metadata for a cleaner output, use:
+  - `removeComments`: The `removeComments` field acts like the `--remove_comments` command-line option. Setting it to a character or string, like "#", removes lines starting with that character or string from the input file. For example, to remove lines that begin with `#`, effectively eliminating comments or metadata for a cleaner output, use:
      ```json
      "removeComments":"#"
      ```
-  - `naValue`: Different software may represent missing values in various ways. The naValue parameter allows you to convert your specified missing value representation into the GWAS-SSF standard `#NA`.
+  - `naValue`: Different software may represent missing values in various ways. The `naValue` parameter allows you to convert your specified missing value representation into the GWAS-SSF standard `#NA`.
     ```json
      "naValue":"Nan"
      ```
@@ -195,9 +195,9 @@ This subsection specifies how to split certain columns in the input file. For ea
 
   - `field`: Specifies the name of the column to be split.
   - `separator`: Defines the delimiter used to split the column. New columns created from the split will be name  as specified in the `new_field`.
-  - `capture`: Utilizes a regular expression to extrac  specific patterns from the field into multiple ne  columns. These resulting columns are named according the values specified in `new_field`.
-  - `new_field`: Names the new fields created afte  splitting.
-  - `include_original`: Determines whether to retain the original column after the spliting. By default, th  original field is omitted after the operation.
+  - `capture`: Utilizes a regular expression to extract  specific patterns from the field into multiple ne  columns. These resulting columns are named according the values specified in `new_field`.
+  - `new_field`: Names the new fields created after splitting.
+  - `include_original`: Determines whether to retain the original column after the splitting. By default, the  original field is omitted after the operation.
 
       * <details>
         <summary>Separator example</summary>
@@ -210,7 +210,7 @@ This subsection specifies how to split certain columns in the input file. For ea
         | chr2:18069070 | rs763680312_T_C  | T   |
         | chr8:135908647 | rs11992603_A_G  | A   |
 
-        **JSON config**:
+        **JSON configuration**:
         ```json
         "field": "SNP",
         "separator": ":",
@@ -237,7 +237,7 @@ This subsection specifies how to split certain columns in the input file. For ea
         | chr2:18069070 | rs763680312_T_C  | T   |chr2 |18069070 |
         | chr8:135908647 | rs11992603_A_G  | A   |chr8| 135908647 |
 
-        **JSON config**:
+        **JSON configuration**:
         ```json
         "field": "rsid",
         "separator": null,
@@ -275,7 +275,7 @@ This subsection specifies editing operations to be performed on certain columns.
       | chr2:18069070 |T   |chr2 |18069070    rs763680312|     T |C |
       | chr8:135908647 |A   |CHR8| 135908647     rs11992603 |    A |G |
       
-      **JSON config**:
+      **JSON configuration**:
        ```json
       "field": "chromosome",
       "rename": "chromosome",
@@ -285,7 +285,7 @@ This subsection specifies editing operations to be performed on certain columns.
        ```
       
       **Output**:
-      | SNP | EA |chromosome|base_pair_location| rsi  effect_allele| other_allele |
+      | SNP | EA |chromosome|base_pair_location| rsid  effect_allele| other_allele |
       |-----|---------|----|------------------|--------  ----|------|
       | chr11:88249377 |T   |11 |88249377| rs11020170 |     T | C  |
       | chr1:60320992 |A   |1| 60320992 |rs116406626|A |     G|
@@ -293,7 +293,7 @@ This subsection specifies editing operations to be performed on certain columns.
       | chr8:135908647 |A   |8| 135908647 |rs11992603  A |    G |
       
       
-      When utilizing the find and replace function, please note that it will modify values within the columns but  not within the headers. For instance, if you attemp  to replace `chr` in the column headers, the header `chromosome` will remain unchanged. Pleas use the `rename` function to change the header.
+      When utilizing the find and replace function, please note that it will modify values within the columns but  not within the headers. For instance, if you try to replace `chr` in the column headers, the header `chromosome` will remain unchanged. Pleas use the `rename` function to change the header.
 
       >[!NOTE|style:callout]
       > Please use "find and replace" together. To remove      any character, enter `""` (an empty string) in the      replace field, rather than leaving it as `null`.      
@@ -311,7 +311,7 @@ This subsection specifies editing operations to be performed on certain columns.
       | 2 | 18069070 | rs763680312_T_C  | T   | C|
       | 8 |135908647 | rs11992603_A_G  | A   | G|
       
-      **JSON config**:
+      **JSON configuration**:
        ```json
       "field": "rsid",
       "rename": "variant_id",

@@ -22,7 +22,7 @@ The Format tool is designed to facilitate the formatting of any summary statisti
 | Options | short name | type | Default value | Description |
 |:--------|:----------:|:----:|:-------------:|:------------|
 |`--generate_config`|`-g` |Boolean|False|To generate the configuration file for the file needed to be formatted|
-|`--config_out`| |Path|None|Specify the configure json output file|
+|`--config_out`| |Path|None|Specify the configure JSON output file|
 
 **Options for applying configuration file**
 
@@ -30,56 +30,56 @@ The Format tool is designed to facilitate the formatting of any summary statisti
 |:--------|:----------:|:----:|:-------------:|:------------|
 |`--apply_config`|`-a` |Boolean|False|Apply the given configuration file to the file|
 |`--test_config`|`-t` |Boolean|False|Test the given configuration file to the first 5 rows of the file|
-|`--config_in`| |Path|None|Specify a configure json file to read in|
-|`--ss_out`|`-o`|Path|None|Output sumstats file|
-|`--analysis_software`|`-f`|Text|None|Specify the analysis software used for generating the summary statistic data|
-|`--minimal2standard`|`-s` |Boolean|False|Try to convert a valid, minimally formatted file to the standard format. This assumes the file at least has `p_value` combined with rsid in `variant_id` field or `chromosome` and `base_pair_location`. Validity of the new file is not guaranteed because mandatory data could be missing from the original file. Please use '\t' for tab, ',' for comma, and " " for whitespace|
+|`--config_in`| |Path|None|Specify a configure JSON file to read in|
+|`--ss_out`|`-o`|Path|None|Output formatted file|
+|`--analysis_software`|`-f`|Text|None|Specify the analysis software used for generating the summary statistics data|
+|`--minimal2standard`|`-s` |Boolean|False|Try to convert a valid, minimally formatted file to the standard format. This assumes the file at least has `p_value` combined with `rsid` in `variant_id` field or `chromosome` and `base_pair_location`. Validity of the new file is not guaranteed because mandatory data could be missing from the original file. Please use '\t' for tab, ',' for comma, and " " for whitespace|
 
 **Options for batch applying configuration file**
 
 | Options | short name | type | Default value | Description |
 |:--------|:----------:|:----:|:-------------:|:------------|
-|`--batch_apply`|`-b` |Boolean|False|Apply configuration files to a batch of sumstats files|
+|`--batch_apply`|`-b` |Boolean|False|Apply configuration files to a batch of summary statistics files|
 |`--lsf`| |Boolean|False|Running the batch process via submitting jobs via LSF|
 |`--slurm`| |Boolean|False|Running the batch process via submitting job via Slurm|
 
 
 ## Examples
-Suppose you have a file named `gwas_sumstats.txt` that needs to be formatted into the GWAS Sum Stats Formatter (gwas-ssf) format.
+Suppose you have a file named `gwas_sumstats.tsv` that needs to be formatted into the GWAS Sum Stats Formatter (gwas-ssf) format.
 
 ### 1. To generate a configuration file:
 ```bash
-gwas-ssf format gwas_sumstats.txt --generate_config --config_out gwas_sumstats.json
+gwas-ssf format gwas_sumstats.tsv --generate_config --config_out gwas_sumstats.json
 ```
 If your file contains comments at the beginning, which may interfere with header recognition, you can remove them using the --remove_comments option:
 ```bash
-gwas-ssf format gwas_sumstats.txt --generate_config --config_out gwas_sumstats.json --remove_comments "#" 
+gwas-ssf format gwas_sumstats.tsv --generate_config --config_out gwas_sumstats.json --remove_comments "#" 
 ```
-Failure to recognize the correct separator can lead to header recognition issues. By default, the format assumes whitespace as the separator for files with "txt" as suffix. However, if the actual delimiter in `gwas_sumstats.txt` is tab, you can specify it using the --delimiter option as follows:
+Failure to recognize the correct separator can lead to header recognition issues. By default, the format assumes whitespace as the separator for files with `txt` as suffix. However, if the actual delimiter in `gwas_sumstats.tsv` is tab, you can specify it using the --delimiter option as follows:
 ```bash
-gwas-ssf format gwas_sumstats.txt --generate_config --config_out gwas_sumstats.json --remove_comments "#" --delimiter "\t"
+gwas-ssf format gwas_sumstats.tsv --generate_config --config_out gwas_sumstats.json --remove_comments "#" --delimiter "\t"
 ```
 This command ensures that the formatter correctly identifies correct delimiter, allowing for accurate header recognition during the formatting process. Adjust the options as needed to match the specific requirements of your input file.
 
 ### 2. Apply a configured file to a summary statistics file:
 #### 2.1. Testing the configured file with the first 5 rows of your input file and previewing the result:
 ```bash
-gwas-ssf format gwas_sumstats.txt --test_config  --config_in gwas_sumstats.json
+gwas-ssf format gwas_sumstats.tsv --test_config  --config_in gwas_sumstats.json
 ```
 Since the --remove_comments and --delimiter options are already specified in the `gwas_sumstats.json` file, there is no need to specify them again here.
 #### 2.2 Applying the configured file to the entire file:
 ```bash
-gwas-ssf format gwas_sumstats.txt --apply_config  --config_in gwas_sumstats.json -o gwas_sumstats_formatted.tsv
+gwas-ssf format gwas_sumstats.tsv --apply_config  --config_in gwas_sumstats.json -o gwas_sumstats_formatted.tsv
 ```
-These commands allow you to test and apply the configuration stored in gwas_sumstats.json to the summary statistics file gwas_sumstats.txt, generating a formatted output file named gwas_sumstats_formatted.tsv. Adjust the options as needed to match your specific configuration and file requirements.
+These commands allow you to test and apply the configuration stored in `gwas_sumstats.json` to the summary statistics file `gwas_sumstats.tsv`, generating a formatted output file named `gwas_sumstats_formatted.tsv`. Adjust the options as needed to match your specific configuration and file requirements.
 
-### 3. Format a sumstat file use pre-defined configure
+### 3. Format a summary statistics file use pre-defined configure
 We provide pre-defined configuration files tailored for outputs from specific software packages. Currently, we support configurations for `REGENIE` and `BOLT-LMM`. Support for `METAL` and `SNPtest` configurations will be available soon.
 
-To apply a pre-defined configuration for "REGENIE" to your `gwas_sumstats.txt` file and generate a formatted output file named `gwas_sumstats_formatted.tsv`, you can use the following command:
+To apply a pre-defined configuration for "REGENIE" to your `gwas_sumstats.tsv` file and generate a formatted output file named `gwas_sumstats_formatted.tsv`, you can use the following command:
 
 ```bash
-gwas-ssf format gwas_sumstats.txt  --apply_config --analysis_software "REGENIE" -o gwas_sumstats_formatted.tsv
+gwas-ssf format gwas_sumstats.tsv  --apply_config --analysis_software "REGENIE" -o gwas_sumstats_formatted.tsv
 ```
 This command ensures that the formatting process aligns with the specific output format of the "REGENIE" software, simplifying the data processing workflow. Adjust the options as needed based on the software used for generating your summary statistics file.
 

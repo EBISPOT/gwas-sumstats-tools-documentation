@@ -9,11 +9,11 @@ The validation tool is crafted to verify if the selected summary statistics file
 | Options | short name | type | Default value | Description |
 |:--------|:----------:|:----:|:-------------:|:------------|
 |`--help`| `-h` |Boolean|False|Display help message, providing guidance on how to use the tool and its various functionalities.|
-|`--errors-out`|`-e`|Boolean|False|Output erros to a csv file, <filename>.err.csv.gz|
+|`--errors-out`|`-e`|Boolean|False|Output errors to a CSV file, `<filename>.err.csv.gz`|
 |`--p-zero`|`-z`|Boolean|False|Force p-values of zero to be allowable. Takes precedence over inferred value (-i)
 |`--min-rows`|`-m`|int|100,000|Minimum rows acceptable for the file
 |`--chunksize`|`-s`|int|1,000,000|Number of rows to store in memory at once.Increase this number for more speed at the cost of more memory. Decrease to save memory, at the cost of speed|
-|`--infer-from-metadata`|`-i`|Boolean|False|Infer validation options from the metadata file <filename>-meta.yaml. E.g. fields for analysis software and negative log10 p-values affect the data validation behaviour.|
+|`--infer-from-metadata`|`-i`|Boolean|False|Infer validation options from the metadata file `<filename>-meta.yaml`. E.g. fields for analysis software and negative log10 p-values affect the data validation behaviour.|
 
 
 ## Examples
@@ -26,7 +26,7 @@ Option 1: Force to allow zero P-values
 ```bash
 gwas-ssf validate GCST12345_formatted.tsv --p-zero --errors-out GCST12345_formatted.err
 ```
-option 2: Verify analysis software field in the meta yaml file
+option 2: Verify analysis software field in the meta YAML file
 ```bash
 gwas-ssf validate GCST12345_formatted.tsv --infer-from-metadata --errors-out GCST12345_formatted.err
 ```

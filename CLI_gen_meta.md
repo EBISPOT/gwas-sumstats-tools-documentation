@@ -12,7 +12,7 @@ The Metadata Generation tool is a utility crafted to facilitate the generation o
 |`--generate-metadata`|`-m`|Boolean|False|Create the metadata file|
 |`--meta-out`|None|Path|None|Specify the metadata output file|
 |`--meta-in`|None|Path|None|Specify a metadata file to read in|
-|`--meta-edit`|`-e`|Boolean|False|Enable metadata edit mode. Then provide params to edit in the `--<FIELD>=<VALUE>` format e.g. `--GWASID=GCST123456` to edit/add that value|
+|`--meta-edit`|`-e`|Boolean|False|Enable metadata edit mode, then specify the parameters you wish to edit using the format `--<FIELD>=<VALUE>` format e.g. `--GWASID=GCST123456` to edit/add that value|
 |` --meta-gwas`|`-g`|Boolean|False|Populate metadata from GWAS Catalog (**Internal use only**)|
 
 ## Examples
@@ -21,7 +21,7 @@ Suppose you have a file named GCST12345.txt for which you need to generate metad
 ```bash
 $ gwas-ssf gen_meta GCST90278188.tsv --meta-out GCST90278188.tsv-meta.yaml --meta-gwas -e --file_type=pre-gwas-ssf
 ```
-This command will generate metadata for the GCST12345.txt file and save it to GCST12345-meta.yaml. The metadata will be fetched from the GWAS Catalog API, and the file_type field will be set to pre-gwas-ssf as specified.
+This command will generate metadata for the GCST12345.txt file and save it to GCST12345-meta.yaml. The metadata will be fetched from the GWAS Catalog API, and the `file_type` field will be set to pre-gwas-ssf as specified.
 
 ----
 Copyright © EMBL-EBI 2024 | EMBL-EBI is an Outstation of the [European Molecular Biology Laboratory](https://www.embl.org/) | [Terms of use](https://www.ebi.ac.uk/about/terms-of-use) | [Data Preservation Statement](https://www.ebi.ac.uk/long-term-data-preservation)

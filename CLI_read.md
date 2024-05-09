@@ -10,13 +10,13 @@ The Read tool is specifically designed to provide a comprehensive preview of GWA
 |:--------|:----------:|:----:|:-------------:|:------------|
 |`--help`| `-h` |Boolean|False|Display help message|
 |`--get_header`|`-h` |Boolean|False|Return the first five rows of the file|
-|`--meta-in`| |Path|filename-meta.yaml|Specify a metadata file to read in,defaulting to filename-meta.yaml|
+|`--meta-in`| |Path|`filename-meta.yaml`|Specify a metadata file to read in,defaulting to `filename-meta.yaml`|
 |`--get-all-metadata`|`-M`|Boolean|False|Return all fields in the metadata file|
 |`--get-metadata`|`-m`|List| None| Get metadata for the specified fields e.g. `-m genome_assembly -m is_harmonised`|
 
 
 ## Examples
-Suppose you download a GWAS summary statistic file `GCST90132222_buildGRCh37.tsv.gz` and it's corresponding metadata yaml file `GCST90132222_buildGRCh37.tsv.gz-meta.yaml`  from the [GWAS catalog public FTP](https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90132001-GCST90133000/GCST90132222/) into the same folder, and you want to:
+Suppose you download a GWAS summary statistic file `GCST90132222_buildGRCh37.tsv.gz` and it's corresponding metadata YAML file `GCST90132222_buildGRCh37.tsv.gz-meta.yaml`  from the [GWAS catalog public FTP](https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90132001-GCST90133000/GCST90132222/) into the same folder, and you want to:
 
 1. Preview the summary statistic (first five rows of the input file.)
 ```bash
@@ -45,12 +45,12 @@ gwas-ssf read GCST90132222_buildGRCh37.tsv.gz --get_header
 ```
 </details>
 
-2. Previewing all fields in the meta-yaml files, `GCST90132222_buildGRCh37.tsv.gz-meta.yaml`, which is located in the same directory where your code is being executed (This function searches for the filename+"-meta.yaml" automatically):
+2. Previewing all fields in the metadata YAML files, `GCST90132222_buildGRCh37.tsv.gz-meta.yaml`, which is located in the same directory where your code is being executed (This function searches for the filename+"-meta.yaml" automatically):
 ```bash
 gwas-ssf read GCST90132222_buildGRCh37.tsv.gz --get-all-metadata
 ```
 
-3. Assuming you need to extract genome_assembly and harmonisation status fields from `GCST90132222_buildGRCh37.tsv.gz-meta.yaml` located in a different directory or named `your_yaml_file`.
+3. Assuming you need to extract `genome_assembly` and `harmonisation status` fields from `GCST90132222_buildGRCh37.tsv.gz-meta.yaml` located in a different directory or named `your_yaml_file`.
 ```bash
 gwas-ssf read GCST90132222_buildGRCh37.tsv.gz --meta-in path_to_yaml_file --get-metadata genome_assembly -m is_harmonised
 ```

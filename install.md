@@ -38,7 +38,7 @@ If the Python version displayed is not within the range of Python 3.9 to Python 
 ```bash
 $ where python3.9
 ```
-3. Create a virtual environment with Python 3.9 using venv. Navigate to your project directory (replace `<DIR>` with your actual project directory) in the terminal and run:
+3. Create a virtual environment with Python 3.9 using `venv`. Navigate to your project directory (replace `<DIR>` with your actual project directory) in the terminal and run:
 ```bash
 $ python3.9 -m venv <DIR>
 ```

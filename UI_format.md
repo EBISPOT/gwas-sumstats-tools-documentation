@@ -33,7 +33,7 @@ This guide provides instructions on how to use the GWAS summary statistics onlin
 4. Click the `Test` button to apply the configuration to the first **FIVE** rows of your selected input file. This action generates a formatted preview output displayed under the `Your Output` section. This approach is particularly time-saving for large input files.
 
 ### Step 4: Apply configuration file and download the formatted result:
-Once you are satisfied with your configuration and test result, please click the `Apply Button` to apply the configurationto the entire input file and download the formatted output. You will have the option to choose the destination and name for your formatted output file. This selection will overwrite the `outFileSuffix` specified in your configuration.
+Once you are satisfied with your configuration and test result, please click the `Apply Button` to apply the configuration the entire input file and download the formatted output. You will have the option to choose the destination and name for your formatted output file. This selection will overwrite the `outFileSuffix` specified in your configuration.
 
 
 ## Validate Steps:
