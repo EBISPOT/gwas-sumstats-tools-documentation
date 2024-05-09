@@ -1,6 +1,6 @@
 # Step-by-step Formatting and Validation guide
 ---
-To practice with this tutorial, you can download the test data from [here](). Feel free to experiment and explore!
+To practice with this tutorial, you can download the test data from [here](https://github.com/EBISPOT/gwas-sumstats-tools-Documentation/tree/main/test_data). Feel free to experiment and explore!
 
 ## Formatting GWAS Summary Statistic Files
 
