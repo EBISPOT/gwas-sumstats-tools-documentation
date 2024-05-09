@@ -1,7 +1,16 @@
-- [Getting started](README)
+<span style="color:#B94378;font-size:1.1em"> **GET STARTED** </span>
+- [Overview](README)
+- [Tutorial](tutorial)
 - [Installation](install)
-- [Reading/previewing a GWAS sumstat file](read)
-- [Formatting (Command Line Interface)](format_CLI)
-- [Metadata Generation](gen_meta)
-- [Validation](validate)
-- [GWAS SumStats Tools Online Interface](format_UI)
+
+
+<span style="color:#B94378;font-size:1.1em"> **Command Line Interface** </span>
+- [Reading/previewing](CLI_read)
+- [Formatting](CLI_format)
+- [Validation](CLI_validate)
+
+
+<span style="color:#B94378;font-size:1.1em"> **SSF-morph (UI)** </span>
+- [SSF-morph overview](UI_format)
+- [Edit the configuration file](edit_config)
+

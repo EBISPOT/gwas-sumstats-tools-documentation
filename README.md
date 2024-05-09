@@ -11,10 +11,10 @@ GWAS SumStats Tools is a versatile toolkit created to simplify the processing, v
 
 ## Quick Start
 
-### User-friendly Interface:SSF-morph
+### User-friendly Interface: SSF-morph
 If you prefer a user-friendly interface for formatting or validating your data, you can use our online tool. This interface allows you to quickly format or validate individual files with a size limit of 2 GB, all without the need for command-line usage. Simply click **<span style="font-size:1.2em;">[SSF-morph](https://ebispot.github.io/gwas-sumstat-format-was/)</span>** to access the tool and upload your data directly from your local computer.
 
-For instructions on how to use the SSF-morph, please visit our [UI Guide Page](format_UI).
+For instructions on how to use the SSF-morph, please visit our [UI Guide Page](UI_format).
 
 > [!TIP|style:callout]
 > Please note that this interface works with **a single file only** and has a file size limitation of  <span style="font-size:1.2em;">**2GB** </span>. 
@@ -28,7 +28,9 @@ However, if you require full access to all functions, or if you need to process 
 Installation requirements: Python >= 3.9 and <3.12
 ```bash
 $ pip3 install gwas-sumstats-tools
+$ gwas-ssf --help
 ```
+
 If you have a different Python version installed on your local computer and encounter compatibility issues, you can create a virtual environment with Python 3.9. Please follow the instructions [here](install)
 
 ----
