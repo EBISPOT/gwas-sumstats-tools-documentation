@@ -14,7 +14,7 @@ Additionally, ensure that you have PIP available. You can verify this by running
 $ pip --version
 ```
 
-## 2. Install GWAS-Sumstat-Tools
+## Install GWAS-Sumstat-Tools
 ### Installing via PIP
 
 ```bash
@@ -25,9 +25,9 @@ This command installs the latest version of GWAS-Sumstat-Tools, which is recomme
 ```bash
 $ pip install "gwas-sumstats-tools==1.0.6"
 ```
-To confirm successful installation of GWAS-Sumstat-Tools, run the command gwas-ssf --help in your terminal. This command will display the help message for the tool, confirming its installation and accessibility.
+To confirm successful installation of GWAS-Sumstat-Tools, run the command `gwas-ssf --help` in your terminal. This command will display the help message for the tool, confirming its installation and accessibility.
 
-<! img to show a help page>
+<img src='/img/gwas-demo.gif'></img>
 
 ### Optional Installation and Execution Methods for GWAS-Sumstat-Tools 
 If the Python version displayed is not within the range of Python 3.9 to Python 3.11, you may encounter compatibility issues with the package. In such cases, you have two options:
@@ -38,7 +38,7 @@ If the Python version displayed is not within the range of Python 3.9 to Python 
 ```bash
 $ where python3.9
 ```
-3. Create a virtual environment with Python 3.9 using venv. Navigate to your project directory (replace `<DIR>` with your actual project directory) in the terminal and run:
+3. Create a virtual environment with Python 3.9 using `venv`. Navigate to your project directory (replace `<DIR>` with your actual project directory) in the terminal and run:
 ```bash
 $ python3.9 -m venv <DIR>
 ```

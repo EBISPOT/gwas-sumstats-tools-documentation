@@ -11,13 +11,11 @@
   <meta name="description" content="Documentation for GWAS SumStats Tools">
 
   <!-- Default Theme (see https://docsify.js.org/#/themes) -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
 </head>
 
 <body>
   <div id="app"></div>
-
   <script>
     // Docsify Configuration (see https://docsify.js.org/#/configuration)
     window.$docsify = {
@@ -31,13 +29,14 @@
       maxLevel: 0,
       // Set subMaxLevel to 0 to remove automatic display of page table of contents (TOC) in Sidebar
       subMaxLevel: 3,
+    
 
       // Search Plugin Configuration
       search: {
         placeholder: 'Type to search',
         noData: 'No matches found.',
         // Headline depth, 1 - 6
-        depth: 2,
+        depth: 4,
       },
 
       //Alerts Plugin Configuration
@@ -46,6 +45,7 @@
     }
     };
   </script>
+
 
   <!-- Required -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
