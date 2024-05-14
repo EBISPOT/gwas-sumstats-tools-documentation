@@ -2,7 +2,7 @@
 ----
 ## Requirements for Installing Packages
 ### Verify Python Version
-Before proceeding, ensure that you have Python version 3.9 or later (but less than 3.12) installed on your computer. You can verify your Python version by opening a terminal or command prompt and executing either of the following commands:
+Before proceeding, ensure that you have Python version 3.9 to 3.11 installed on your computer. You can verify your Python version by opening a terminal or command prompt and executing either of the following commands:
 ```bash
 $ python --version
 # or 
@@ -50,7 +50,7 @@ $ source <DIR>/bin/activate
 ```bash
 $ pip install gwas-sumstats-tools
 ```
-6. To check if gwas-sumstats-tools was successfully installed using `gwas-ssf --help`.
+6. To check if gwas-sumstats-tools was successfully installed use `gwas-ssf --help`.
 
 7. You can now use gwas-sumstats-tools within the activated virtual environment. When you're done, you can deactivate the virtual environment by running:
 ```bash
@@ -59,18 +59,18 @@ $ deactivate
 > Please refer to [installing-packages](https://packaging.python.org/en/latest/tutorials/installing-packages/) for more detail information on how to install packages 
 
 #### Option 2: Run with docker or singularity
-1. Check if the docker **OR** singularity is available
+1. Check if the Docker **OR** Singularity is available
 ```bash
 # docker
 $ docker --version
 # singularity
 $ singularity --version
 ```
-> please read how to install [docker](https://docs.docker.com/engine/install/) or [singularity](https://docs.sylabs.io/guides/2.6/user-guide/quick_start.html)
+> please read how to install [Docker](https://docs.docker.com/engine/install/) or [Singularity](https://docs.sylabs.io/guides/2.6/user-guide/quick_start.html)
 
 2. Run with docker
 ```bash
-$ docker run -it -v ${PWD}:/application ebispot/gwas-sumstats-tools:latest
+$ docker run -it -v $path_installed_docker ebispot/gwas-sumstats-tools:latest
 ```
 
 3. **OR** Run with singularity

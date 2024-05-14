@@ -1,4 +1,4 @@
-<span style="color:#B94378;font-size:1.1em"> **GET STARTED** </span>
+<span style="color:#B94378;font-size:1.1em"> **Get Started** </span>
 - [Overview](README)
 - [Tutorial](tutorial)
 - [Installation](install)

@@ -1,7 +1,7 @@
 # GWAS SumStats Tools
 ___
 
-GWAS SumStats Tools is a versatile toolkit created to simplify the processing, validation, and formatting of GWAS summary statistics files intended for submission to the GWAS catalog. This toolkit provides a variety of features designed for efficiency and ease of use.
+GWAS SumStats Tools is a versatile toolkit created to simplify the processing, validation, and formatting of GWAS summary statistics files intended for submission to the GWAS Catalog. This toolkit provides a variety of features designed for efficiency and ease of use.
 
 ## Features
 1. Reading: Preview a GWAS summary statistics data file, extract headers, metadata, or specific field-value pairs from the metadata.
@@ -25,7 +25,7 @@ For instructions on how to use the SSF-morph, please visit our [UI Guide Page](U
 However, if you require full access to all functions, or if you need to process larger files or multiple files simultaneously, we recommend using the command-line interface. Please follow the instructions provided here to install and use the command-line tools.
 
 #### Local Installation with pip
-Installation requirements: Python >= 3.9 and <3.12
+Installation requirements: Python  version 3.9 to 3.11.
 ```bash
 $ pip3 install gwas-sumstats-tools
 $ gwas-ssf --help

@@ -11,12 +11,12 @@ The Read tool is specifically designed to provide a comprehensive preview of GWA
 |`--help`| `-h` |Boolean|False|Display help message|
 |`--get_header`|`-h` |Boolean|False|Return the first five rows of the file|
 |`--meta-in`| |Path|`filename-meta.yaml`|Specify a metadata file to read in,defaulting to `filename-meta.yaml`|
-|`--get-all-metadata`|`-M`|Boolean|False|Return all fields in the metadata file|
+|`--get-all-metadata`|`-M`|Boolean|False|Return [all fields](https://github.com/EBISPOT/gwas-summary-statistics-standard/blob/master/schema/metadata-yamale-schema.yaml) in the metadata file|
 |`--get-metadata`|`-m`|List| None| Get metadata for the specified fields e.g. `-m genome_assembly -m is_harmonised`|
 
 
 ## Examples
-Suppose you download a GWAS summary statistic file `GCST90132222_buildGRCh37.tsv.gz` and it's corresponding metadata YAML file `GCST90132222_buildGRCh37.tsv.gz-meta.yaml`  from the [GWAS catalog public FTP](https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90132001-GCST90133000/GCST90132222/) into the same folder, and you want to:
+Suppose you download a GWAS summary statistic file `GCST90132222_buildGRCh37.tsv.gz` and its corresponding metadata YAML file `GCST90132222_buildGRCh37.tsv.gz-meta.yaml`  from the [GWAS Catalog public FTP](https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90132001-GCST90133000/GCST90132222/) into the same folder, and you want to:
 
 1. Preview the summary statistic (first five rows of the input file.)
 ```bash

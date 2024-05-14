@@ -173,11 +173,11 @@ The `fileConfig` settings are applied to the input file first, followed by modif
     ```json
      "convertNegLog10Pvalue":true
      ```
-  - `fieldSeparator`: Defines the field separator for reading the input file. It is same to the `--delimiter` in the command line. If not specified, we can automatically detect the delimiter as whitespace if your is *.txt file, or comma if your is *.csv file; or tab if your is *.tsv file. Otherwise, please specify the delimiter which can help to recognise the column correctly.To specify a tab as the separator, use:
+  - `fieldSeparator`: Defines the field separator for reading the input file. It is the same as the `--delimiter` option in the command line. If not specified, we can automatically detect the delimiter as whitespace for a *.txt file, comma for a *.csv file; or tab for a *.tsv file. Otherwise, please specify the delimiter to help the validator to recognise the column correctly.To specify a tab as the separator, use:
      ```json
      "fieldSeparator":"\t"
      ```
-  - `removeComments`: The `removeComments` field acts like the `--remove_comments` command-line option. Setting it to a character or string, like "#", removes lines starting with that character or string from the input file. For example, to remove lines that begin with `#`, effectively eliminating comments or metadata for a cleaner output, use:
+  - `removeComments`: The `removeComments` field acts like the `--remove_comments` command-line option. Setting this to a character or string, like "#", removes lines starting with that character or string from the input file. For example, to remove lines that begin with `#`, effectively eliminating comments or metadata for a cleaner output, use:
      ```json
      "removeComments":"#"
      ```
@@ -195,20 +195,16 @@ This subsection specifies how to split certain columns in the input file. For ea
 
   - `field`: Specifies the name of the column to be split.
   - `separator`: Defines the delimiter used to split the column. New columns created from the split will be name  as specified in the `new_field`.
-  - `capture`: Utilizes a regular expression to extract  specific patterns from the field into multiple ne  columns. These resulting columns are named according the values specified in `new_field`.
-  - `new_field`: Names the new fields created after splitting.
-  - `include_original`: Determines whether to retain the original column after the splitting. By default, the  original field is omitted after the operation.
-
-      * <details>
+     * <details>
         <summary>Separator example</summary>
 
         **Input**:
-        | SNP | rsid | EA |
+        | <span style="color:red">SNP</span> | rsid | EA |
         |-----|-------|---------|
-        | chr11:88249377 | rs11020170_T_C  | T   |
-        | chr1:60320992 | rs116406626_A_G  | A   |
-        | chr2:18069070 | rs763680312_T_C  | T   |
-        | chr8:135908647 | rs11992603_A_G  | A   |
+        | <span style="color:red">chr11:88249377</span>| rs11020170_T_C  | T   |
+        | <span style="color:red">chr1:60320992</span> | rs116406626_A_G  | A   |
+        | <span style="color:red">chr2:18069070</span> | rs763680312_T_C  | T   |
+        | <span style="color:red">chr8:135908647</span> | rs11992603_A_G  | A   |
 
         **JSON configuration**:
         ```json
@@ -219,23 +215,24 @@ This subsection specifies how to split certain columns in the input file. For ea
         "include_original": true
         ```
         **Output**:
-        | SNP | rsid | EA |chromosome|base_pair_location|
+        | SNP | rsid | EA |<span style="color:red">chromosome</span>|<span style="color:red">base_pair_location</span>|
         |-----|-------|---------|----|------------------|
-        | chr11:88249377 | rs11020170_T_C  | T   |chr11 |88249377 |
-        | chr1:60320992 | rs116406626_A_G  | A   |chr1| 60320992 |
-        | chr2:18069070 | rs763680312_T_C  | T   |chr2 |18069070 |
-        | chr8:135908647 | rs11992603_A_G  | A   |chr8| 135908647 |
+        | <span style="color:red">chr11:88249377</span> | rs11020170_T_C  | T   |<span style="color:red">chr11</span> |<span style="color:red">88249377</span> |
+        | <span style="color:red">chr1:60320992</span> | rs116406626_A_G  | A   |<span style="color:red">chr1</span>| <span style="color:red">60320992</span> |
+        | <span style="color:red">chr2:18069070</span> | rs763680312_T_C  | T   |<span style="color:red">chr2</span> |<span style="color:red">18069070</span> |
+        | <span style="color:red">chr8:135908647</span> | rs11992603_A_G  | A   |<span style="color:red">chr8</span>| <span style="color:red">135908647</span> |
         </details>
+  - `capture`: Utilizes a regular expression to extract  specific patterns from the field into multiple new columns. These resulting columns are named according to the values specified in `new_field`.
       * <details>
         <summary>Capture example</summary>
 
         **Input**:
-        | SNP | rsid | EA |chromosome|base_pair_location|
+        | SNP | <span style="color:red">rsid</span> | EA |chromosome|base_pair_location|
         |-----|-------|---------|----|------------------|
-        | chr11:88249377 | rs11020170_T_C  | T   |chr11 |88249377 |
-        | chr1:60320992 | rs116406626_A_G  | A   |chr1| 60320992 |
-        | chr2:18069070 | rs763680312_T_C  | T   |chr2 |18069070 |
-        | chr8:135908647 | rs11992603_A_G  | A   |chr8| 135908647 |
+        | chr11:88249377 | <span style="color:red">rs11020170_T_C</span> | T   |chr11 |88249377 |
+        | chr1:60320992 | <span style="color:red">rs116406626_A_G</span>  | A   |chr1| 60320992 |
+        | chr2:18069070 | <span style="color:red">rs763680312_T_C</span>  | T   |chr2 |18069070 |
+        | chr8:135908647 | <span style="color:red">rs11992603_A_G</span>  | A   |chr8| 135908647 |
 
         **JSON configuration**:
         ```json
@@ -246,16 +243,19 @@ This subsection specifies how to split certain columns in the input file. For ea
         "include_original": false
         ```
         **Output**:
-        | SNP | EA |chromosome|base_pair_location| rsid | effect_allele| other_allele |
+        | SNP | EA |chromosome|base_pair_location| <span style="color:red">rsid</span> | <span style="color:red">effect_allele</span>| <span style="color:red">other_allele</span> |
         |-----|---------|----|------------------|-----|-----|----|
-        | chr11:88249377 |T   |chr11 |88249377 |rs11020170 | T | C  |
-        | chr1:60320992 |A   |chr1| 60320992 |rs116406626 |A | G|
-        | chr2:18069070 |T   |chr2 |18069070 |rs763680312| T |C |
-        | chr8:135908647 |A   |chr8| 135908647 |rs11992603 |A |G |
-
-        >[!TIP|style:callout]
-        > If you're new to regex, [Regex101](https://regex101.com/) is a highly recommended online tool for testing and debugging regular expressions. It offers detailed explanations of each component of your regex and tests your patterns against sample texts for easy understanding. Additionally, there are numerous [regex cheat sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) available online that provide a handy quick-start guide to familiarize yourself with the basics.
+        | chr11:88249377 |T   |chr11 |88249377 |<span style="color:red">rs11020170</span> | <span style="color:red">T</span> | <span style="color:red">C</span>  |
+        | chr1:60320992 |A   |chr1| 60320992 |<span style="color:red">rs116406626</span> |<span style="color:red">A</span> | <span style="color:red">G</span>|
+        | chr2:18069070 |T   |chr2 |18069070 |<span style="color:red">rs763680312</span>| <span style="color:red">T</span> |<span style="color:red">C</span> |
+        | chr8:135908647 |A   |chr8| 135908647 |<span style="color:red">rs11992603</span> |<span style="color:red">A</span> |<span style="color:red">G</span> |
         </details>
+  - `new_field`: Names the new fields created after splitting.
+  - `include_original`: Determines whether to retain the original column after the splitting. By default, the  original field is omitted after the operation.
+    
+
+   >[!TIP|style:callout]
+   > If you're new to regex, [Regex101](https://regex101.com/) is a highly recommended online tool for testing and debugging regular expressions. It offers detailed explanations of each component of your regex and tests your patterns against sample texts for easy understanding. Additionally, there are numerous [regex cheat sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) available online that provide a handy quick-start guide to familiarize yourself with the basics.
 
 #### `edit` Subsection:
 This subsection specifies editing operations to be performed on certain columns.Each entry contains:
@@ -263,21 +263,21 @@ This subsection specifies editing operations to be performed on certain columns.
 - `rename`: Specifies the new name for the column.
 - `find`: Specifies a pattern to find within the column.
 - `replace`: Specifies a pattern to replace within the  column.
-- `extract`: Specifies a pattern to extract from thcolumn.
+- `extract`: Specifies a pattern to extract from the column.
     * <details>
       <summary>Find and replace example</summary>
 
       **Input**:
-      | SNP | EA |chromosome|base_pair_locatiorsid |  effect_allele|other_allele |
-      |-----|----|---------|-----------------------|-------------|------------|
-      | chr11:88249377 |T   |chr11 |88249377    rs11020170 |     T | C  |
-      | chr1:60320992 |A   |CHR1| 60320992    rs116406626 |    A | G|
-      | chr2:18069070 |T   |chr2 |18069070    rs763680312|     T |C |
-      | chr8:135908647 |A   |CHR8| 135908647     rs11992603 |    A |G |
+      | SNP | EA |<span style="color:red">chr</span>|base_pair_locatiorsid |rsid| effect_allele|other_allele |
+      |-----|----|---------|-----------------------|----|-------------|------------|
+      | chr11:88249377 |T   |<span style="color:red">chr11</span> |88249377    |rs11020170 |     T | C  |
+      | chr1:60320992 |A   |<span style="color:red">CHR1</span>| 60320992  |   rs116406626 |    A | G|
+      | chr2:18069070 |T   |<span style="color:red">chr2</span> |18069070  |  rs763680312|     T |C |
+      | chr8:135908647 |A   |<span style="color:red">CHR8</span>| 135908647 |rs11992603 |    A |G |
       
       **JSON configuration**:
        ```json
-      "field": "chromosome",
+      "field": "chr",
       "rename": "chromosome",
       "find": "chr|CHR",
       "replace": "",
@@ -285,15 +285,15 @@ This subsection specifies editing operations to be performed on certain columns.
        ```
       
       **Output**:
-      | SNP | EA |chromosome|base_pair_location| rsid  effect_allele| other_allele |
-      |-----|---------|----|------------------|--------  ----|------|
-      | chr11:88249377 |T   |11 |88249377| rs11020170 |     T | C  |
-      | chr1:60320992 |A   |1| 60320992 |rs116406626|A |     G|
-      | chr2:18069070 |T   |2 |18069070 |rs763680312 |T |    C |
-      | chr8:135908647 |A   |8| 135908647 |rs11992603  A |    G |
+      | SNP | EA |<span style="color:red">chromosome</span>|base_pair_location| rsid  |effect_allele| other_allele |
+      |-----|----|----------|------------------|-------|--------------|-------------|
+      | chr11:88249377 |T   |<span style="color:red">11</span> |88249377| rs11020170 |     T | C  |
+      | chr1:60320992 |A   |<span style="color:red">1</span>| 60320992 |rs116406626|A |     G|
+      | chr2:18069070 |T   |<span style="color:red">2</span> |18069070 |rs763680312 |T |    C |
+      | chr8:135908647 |A   |<span style="color:red">8</span>| 135908647 |rs11992603 | A |    G |
       
       
-      When utilizing the find and replace function, please note that it will modify values within the columns but  not within the headers. For instance, if you try to replace `chr` in the column headers, the header `chromosome` will remain unchanged. Pleas use the `rename` function to change the header.
+      When utilizing the find and replace function, please note that it will modify values within the columns but  not within the headers. For instance, if you try to replace `chr` in the column headers, the header `chromosome` will remain unchanged. Please use the `rename` function to change the header.
 
       >[!NOTE|style:callout]
       > Please use "find and replace" together. To remove      any character, enter `""` (an empty string) in the      replace field, rather than leaving it as `null`.      
@@ -304,12 +304,12 @@ This subsection specifies editing operations to be performed on certain columns.
       <summary>Extract example</summary>
       
       **Input**:
-      | chromosome| base_pair_location | rsid |effect_allele| other_allele |
+      | chromosome| base_pair_location | <span style="color:red">rsid</span> |effect_allele| other_allele |
       |-----------|--------------------|------|-------------|-------------|
-      | 11| 88249377 | rs11020170_T_C  | T   | C|
-      | 1 | 60320992 | rs116406626_A_G  | A   | G|
-      | 2 | 18069070 | rs763680312_T_C  | T   | C|
-      | 8 |135908647 | rs11992603_A_G  | A   | G|
+      | 11| 88249377 | <span style="color:red">rs11020170_T_C</span>  | T   | C|
+      | 1 | 60320992 | <span style="color:red">rs116406626_A_G</span>  | A   | G|
+      | 2 | 18069070 | <span style="color:red">rs763680312_T_C </span> | T   | C|
+      | 8 |135908647 | <span style="color:red">rs11992603_A_G</span>  | A   | G|
       
       **JSON configuration**:
        ```json
@@ -317,29 +317,29 @@ This subsection specifies editing operations to be performed on certain columns.
       "rename": "variant_id",
       "find": null,
       "replace": null,
-      "extract": "rs"
+      "extract": "rs[0-9]+"
        ```
       
       **Output**:
-       | chromosome| base_pair_location | variant_id |effect_allele|other_allele |
+       | chromosome| base_pair_location | <span style="color:red">variant_id |effect_allele|other_allele |
       |-----|-------|-------------|-------------|------|
-      | 11| 88249377 | rs11020170 | T   | C|
-      | 1| 60320992 | rs116406626  | A   | G|
-      | 2| 18069070 | rs763680312 | T   | C|
-      | 8|135908647 | rs11992603  | A   | G|
+      | 11| 88249377 | <span style="color:red">rs11020170</span> | T   | C|
+      | 1| 60320992 | <span style="color:red">rs116406626</span>  | A   | G|
+      | 2| 18069070 | <span style="color:red">rs763680312</span> | T   | C|
+      | 8|135908647 | <span style="color:red">rs11992603</span>  | A   | G|
       
       </details>
 
 ## Additional Functions
-Beyond formatting the input file according to the configuration file, the format tool also applies several default settings to every summary statistic:
+Beyond formatting the input file according to the configuration file, the format tool also applies several default settings to every summary statistics file:
 
 1. Reorder the mandatory columns in your dataset to match the GWAS-SSF specified sequence: 
 ```text
 chromosome, base_pair_location, effect_allele, other_allele, effect (beta/odds ratio/hazard ratio), standard_error, effect_allele_frequency, pval (or negativelog10Pvalue). 
 ```
 Arrange any additional columns in their original input order.
-2. Filling Missing Fields: If any mandatory column is missing from the input file, the format tool will automatically add this column and populate all its values with `#NA`.
-3. Convert NA Values: The tool converts any 'NA' or 'None' values with `#NA`, ensuring data consistency.
+2. Fill missing fields: If any mandatory column is missing from the input file, the format tool will automatically add this column and populate all its values with `#NA`.
+3. Convert NA values: The tool converts any 'NA' or 'None' values to `#NA`, ensuring data consistency.
 
 ----
 Copyright © EMBL-EBI 2024 | EMBL-EBI is an Outstation of the [European Molecular Biology Laboratory](https://www.embl.org/) | [Terms of use](https://www.ebi.ac.uk/about/terms-of-use) | [Data Preservation Statement](https://www.ebi.ac.uk/long-term-data-preservation)

@@ -13,7 +13,7 @@ This guide provides instructions on how to use the GWAS summary statistics onlin
 ## Format Steps:
 
 ### Step 1: Select the input file:
-   1. Click the `Grant Permission` button to allows the browser read and write access to a specific folder.
+   1. Click the `Grant Permission` button to give the browser read and write access to a specific folder.
    2. Click the `Select Input File` button to choose your input file from the authorized folder.
    3. The message `<your file> is selected` confirms that the file has been successfully selected.
 
@@ -29,11 +29,11 @@ This guide provides instructions on how to use the GWAS summary statistics onlin
 ### Step 3: Tailor and test the configuration file:
 1. Please ensure that the text box in the Configure section is not empty.
 2. Click on `Show Your Input Data` button and/or `Show Example Data` button to compare the differences and adjust your configuration as necessary.
-3. To further tailor the configuration file to better suit needs, please refer to [this instruction](edit_config) on how to modify the configuration.
+3. To further tailor the configuration file to better suit your needs, please refer to [these instructions](edit_config) on how to modify the configuration.
 4. Click the `Test` button to apply the configuration to the first **FIVE** rows of your selected input file. This action generates a formatted preview output displayed under the `Your Output` section. This approach is particularly time-saving for large input files.
 
 ### Step 4: Apply configuration file and download the formatted result:
-Once you are satisfied with your configuration and test result, please click the `Apply Button` to apply the configuration the entire input file and download the formatted output. You will have the option to choose the destination and name for your formatted output file. This selection will overwrite the `outFileSuffix` specified in your configuration.
+Once you are satisfied with your configuration and test result, please click the `Apply` button to apply the configuration to the entire input file and download the formatted output. You will have the option to choose the destination and name for your formatted output file. This selection will overwrite the `outFileSuffix` specified in your configuration.
 
 
 ## Validate Steps:
@@ -43,7 +43,7 @@ Please note:
  - Unlike the CLI validation, this tool does not allow forcing acceptance of zero P-values or adjustments based on the minimum number of rows. The minimum required number of rows is set at 100,000 to pass the validation.
 
 ### Step 5: Select the input file:
-   1. Click the `Grant Permission` button to allows the browser read and write access to a specific folder.
+   1. Click the `Grant Permission` button to give the browser read and write access to a specific folder.
    2. Click the `Select Input File` button to choose your input file from the authorized folder. Once the file is successfully selected, a confirmation message, `<your file> is selected for validation`, will appear.
    3. The message `<your file> is selected` confirms that the file has been successfully selected.
    4. Click `Validate the selected file` to begin validation. The validation results will be displayed in the box below.
