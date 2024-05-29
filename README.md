@@ -16,7 +16,7 @@ If you prefer a user-friendly interface for formatting or validating your data, 
 
 For instructions on how to use the SSF-morph, please visit our [UI Guide Page](UI_format).
 
-> [!TIP|style:callout]
+> [!TIP]
 > Please note that this interface works with **a single file only** and has a file size limitation of  <span style="font-size:1.2em;">**2GB** </span>. 
 
 
