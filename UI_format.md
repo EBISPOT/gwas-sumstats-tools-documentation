@@ -1,6 +1,6 @@
 # SSF-morph
 ____
-This guide provides instructions on how to use the GWAS summary statistics online formatting and validation tool - [SSF-morph](https://ebispot.github.io/gwas-sumstat-format-was/). You can use this tool to either
+This guide provides instructions on how to use the GWAS summary statistics online formatting and validation tool - [SSF-morph](https://ebispot.github.io/gwas-sumstats-tools-ssf-morph/). You can use this tool to either
 - **Format** (Steps 1 to 4) your summary statistics files into the GWAS Catalog standard format, as specified by the [gwas-ssf](https://github.com/EBISPOT/gwas-summary-statistics-standard) schema, or to 
 - **Validate** (Step 5) whether your files adhere to this standard format.
 
