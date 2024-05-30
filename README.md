@@ -12,7 +12,7 @@ GWAS SumStats Tools is a versatile toolkit created to simplify the processing, v
 ## Quick Start
 
 ### User-friendly Interface: SSF-morph
-If you prefer a user-friendly interface for formatting or validating your data, you can use our online tool. This interface allows you to quickly format or validate individual files with a size limit of 2 GB, all without the need for command-line usage. Simply click **<span style="font-size:1.2em;">[SSF-morph](https://ebispot.github.io/gwas-sumstat-format-was/)</span>** to access the tool and upload your data directly from your local computer.
+If you prefer a user-friendly interface for formatting or validating your data, you can use our online tool. This interface allows you to quickly format or validate individual files with a size limit of 2 GB, all without the need for command-line usage. Simply click **<span style="font-size:1.2em;">[SSF-morph](https://ebispot.github.io/gwas-sumstats-tools-ssf-morph/)</span>** to access the tool and upload your data directly from your local computer.
 
 For instructions on how to use the SSF-morph, please visit our [UI Guide Page](UI_format).
 
