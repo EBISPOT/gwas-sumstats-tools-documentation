@@ -8,7 +8,7 @@ To practice with this tutorial, you can download the test data from [here](https
 - **Determine if your input file is larger than 2GB or if you have more than one file to format.**
   
   - If yes, please install our command line interface (CLI) by following these [instructions](install) and then proceed to Step 2.
-  - If no, consider using the online interface [SSF-morph](https://ebispot.github.io/gwas-sumstat-format-was/) for formatting. To learn how to modify the configuration, please refer to the instructions provided [here](edit_config).
+  - If no, consider using the online interface [SSF-morph](https://ebispot.github.io/gwas-sumstats-tools-ssf-morph/) for formatting. To learn how to modify the configuration, please refer to the instructions provided [here](edit_config).
   
   > [!NOTE|style:callout]
   > Please note that the command line tool allows formatting and validation of single or multiple files of any size.
@@ -63,7 +63,7 @@ To practice with this tutorial, you can download the test data from [here](https
 #### Step 1: 
 - **Determine if the file you want to validate is larger than 2GB or if you have more than one file to validate.**
    - If yes, please install our command line interface (CLI) by following these [instructions](install) and then proceed to Step 2.
-   - If no, consider using the online interface [SSF-morph](https://ebispot.github.io/gwas-sumstat-format-was/) to validate your file.
+   - If no, consider using the online interface [SSF-morph](https://ebispot.github.io/gwas-sumstats-tools-ssf-morph/) to validate your file.
 
 #### Step 2:
 - **Determine if you have any special requirements for validation (i.e. to test a file with fewer than the normal minimum of 100,000 rows or with zero p_value).**
