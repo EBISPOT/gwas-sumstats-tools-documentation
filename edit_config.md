@@ -169,10 +169,15 @@ The `fileConfig` settings are applied to the input file first, followed by modif
     ```json
      "outFileSuffix":"_formatted"
      ```
-  - `convertNegLog10Pvalue`: Specifies whether to convert negative log10 p-values into p-values and it is set to false by default. To enable this conversion, adjust your settings as follows:
+  - `convertNegLog10Pvalue`: Specifies whether to recognize and convert the column named `neg_log_10_p_value` into p-values. This field is set to false by default. To enable this conversion, adjust your settings as follows:
     ```json
      "convertNegLog10Pvalue":true
      ```
+
+  If `convertNegLog10Pvalue` is set to `false`: The formatter will automatically create a `p_value` column with `NA` values if the `p_value` column is missing in the input data.
+
+  If `convertNegLog10Pvalue` is set to `true`: The values in the `neg_log_10_p_value` column will be converted to p-values using the formula `10**(-float(x))`. The `neg_log_10_p_value` column will be renamed to `p_value`.
+
   - `fieldSeparator`: Defines the field separator for reading the input file. It is the same as the `--delimiter` option in the command line. If not specified, we can automatically detect the delimiter as whitespace for a *.txt file, comma for a *.csv file; or tab for a *.tsv file. Otherwise, please specify the delimiter to help the validator to recognise the column correctly.To specify a tab as the separator, use:
      ```json
      "fieldSeparator":"\t"
