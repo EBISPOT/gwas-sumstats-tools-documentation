@@ -9,6 +9,10 @@ GWAS SumStats Tools is a versatile toolkit created to simplify the processing, v
 3. Metadata Generation: Automatically generate metadata for a data file from a submission form or create metadata from the GWAS Catalog (for internal use).
 4. Validation: Validate the integrity of a summary statistic file using a dynamically generated schema.
 
+## Citation:
+If you use the NHGRI-EBI GWAS Catalog tool in your research,  please refer to the "[How to Cite the NHGRI-EBI GWAS Catalog, Data, or Diagrams](https://www.ebi.ac.uk/gwas/docs/about#:~:text=How%20to%20cite%20the%20NHGRI%2DEBI%20GWAS%20Catalog%2C%20data%20therein%20or%20diagram%3A)" section on our website for proper citation guidelines.
+
+
 ## Quick Start
 
 ### User-friendly Interface: SSF-morph
